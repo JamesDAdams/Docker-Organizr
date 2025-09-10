@@ -3,7 +3,7 @@ FROM bmoorman/ubuntu:focal
 ARG DEBIAN_FRONTEND=noninteractive
 
 ENV HTTPD_SERVERNAME=localhost \
-    HTTPD_PORT=9357
+    HTTPD_PORT=8080
 
 WORKDIR /var/www
 
