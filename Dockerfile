@@ -38,6 +38,7 @@ RUN apt-get update \
  && apt-get clean \
  && rm --recursive --force /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
+
 COPY apache2/ /etc/apache2/
 
 VOLUME /config
