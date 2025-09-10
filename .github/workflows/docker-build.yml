@@ -28,10 +28,13 @@ jobs:
         run: |
           IMAGE_NAME="ghcr.io/${{ github.repository }}"
           IMAGE_NAME_LC=$(echo "$IMAGE_NAME" | tr '[:upper:]' '[:lower:]')
-          docker build -t ${IMAGE_NAME_LC}:latest .
+          VERSION_TAG="${{ github.sha }}"
+          docker build -t ${IMAGE_NAME_LC}:latest -t ${IMAGE_NAME_LC}:${VERSION_TAG} .
 
       - name: Push Docker image
         run: |
           IMAGE_NAME="ghcr.io/${{ github.repository }}"
           IMAGE_NAME_LC=$(echo "$IMAGE_NAME" | tr '[:upper:]' '[:lower:]')
+          VERSION_TAG="${{ github.sha }}"
           docker push ${IMAGE_NAME_LC}:latest
+          docker push ${IMAGE_NAME_LC}:${VERSION_TAG}
