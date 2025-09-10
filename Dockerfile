@@ -33,7 +33,7 @@ RUN apt-get update \
  && ln --symbolic --force /dev/stderr /var/log/apache2/error.log \
  && ln --symbolic --force /dev/stdout /var/log/apache2/access.log \
  && ln --symbolic --force /dev/stdout /var/log/apache2/other_vhosts_access.log \
- && git clone --single-branch https://github.com/causefx/Organizr.git \
+ && git clone --single-branch https://github.com/JamesDAdams/Organizr.git \
  && apt-get autoremove --yes --purge \
  && apt-get clean \
  && rm --recursive --force /var/lib/apt/lists/* /tmp/* /var/tmp/*
